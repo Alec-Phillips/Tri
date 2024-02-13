@@ -27,7 +27,7 @@ const radios = document.querySelectorAll("input[type=radio]")
 radios.forEach((radio) => {
   radio.addEventListener("click", () => {
     mode = radio.value
-    updateButtons()
+    // updateButtons()
   })
 })
 
@@ -52,6 +52,14 @@ const updateButtons = () => {
           .createTextNode(button)))
   })
 }
+
+const buttons = document.querySelectorAll(".calc-button")
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    console.log("here", screenInput.innerHTML, button.innerHTML)
+    screenInput.value += button.innerHTML
+  })
+})
 
 
 
