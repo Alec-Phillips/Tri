@@ -71,7 +71,14 @@ main {
 }
 .calc-button {
   width: 40px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid hsl(67, 91%, 89%);
 }
 .calc-button:hover {
   cursor: pointer;
+  background-color: hsl(67, 91%, 89%);
+}
+.calc-button:active {
+  background-color: hsl(66, 42%, 75%);
 }
