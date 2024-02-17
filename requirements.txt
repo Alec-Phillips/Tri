@@ -1,0 +1,21 @@
+- base 3 and base 10 options
+  - when switching between bases:
+    - clear input
+    - reset current calculation
+    - update the buttons
+      - disable extra buttons
+
+- operations supported:
+  - addition
+  - subtraction
+  - multiplication
+  - division
+
+- the input should be focused always
+  - any key press should be caught and update the input field
+
+- buttons
+  - key should have a hovered and pressed state 
+  - when an operation key is pressed it should stay indicated while the operation is in progress
+    - when the second operand is added, the field clears but the operation button is still highlighted 
+    
