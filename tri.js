@@ -30,15 +30,7 @@ radios.forEach((radio) => {
   radio.addEventListener("click", () => {
     mode = radio.value
     screenInput.value = ""
-    if (radio.value === "base-10") {
-      base10Buttons.forEach((button) => {
-        button.removeAttribute("disabled")
-      })
-    } else {
-      base10Buttons.forEach((button) => {
-        button.setAttribute("disabled", true)
-      })
-    }
+    updateButtons(radio.value)
   })
 })
 
@@ -52,16 +44,16 @@ function checkInput(e) {
 screenInput.addEventListener("keypress", checkInput)
 
 
-const buttonsArea = document.querySelector("#buttons-area")
-const updateButtons = () => {
-  buttonsArea.innerHTML = ""
-  getButtons().forEach((button) => {
-    buttonsArea
-      .appendChild(document
-        .createElement("div")
-        .appendChild(document
-          .createTextNode(button)))
-  })
+const updateButtons = (newMode) => {
+  if (newMode === "base-10") {
+    base10Buttons.forEach((button) => {
+      button.removeAttribute("disabled")
+    })
+  } else {
+    base10Buttons.forEach((button) => {
+      button.setAttribute("disabled", true)
+    })
+  }
 }
 
 const buttons = document.querySelectorAll(".calc-button")
