@@ -13,9 +13,10 @@
 
 - the input should be focused always
   - any key press should be caught and update the input field
+    - this should also trigger the appropriate button to enter the pressed state briefly (as if the user clicked it)
+  - the input field should never have a cursor
 
 - buttons
   - key should have a hovered and pressed state 
   - when an operation key is pressed it should stay indicated while the operation is in progress
     - when the second operand is added, the field clears but the operation button is still highlighted 
-    

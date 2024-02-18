@@ -57,6 +57,7 @@ main {
   height: 40px;
   font-size: 18px;
   outline: none;
+  caret-color: transparent;
 }
 #buttons-area {
   grid-column: 2;
@@ -81,4 +82,9 @@ main {
 }
 .calc-button:active {
   background-color: hsl(66, 42%, 75%);
+}
+.calc-button:disabled {
+  cursor: not-allowed;
+  background-color: hsl(65, 17%, 73%);
+  border: 1px solid hsl(65, 17%, 73%);
 }

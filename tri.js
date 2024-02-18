@@ -1,4 +1,4 @@
-let mode = "tri"
+let mode = "base-3"
 
 
 const CONFIGS = {
@@ -23,11 +23,22 @@ const CONFIGS = {
 const getAllowedKeys = () => CONFIGS[mode].allowedKeys
 const getButtons = () => CONFIGS[mode].buttons
 
+const base10Buttons = document.querySelectorAll(".base-10-button")
+
 const radios = document.querySelectorAll("input[type=radio]")
 radios.forEach((radio) => {
   radio.addEventListener("click", () => {
     mode = radio.value
-    // updateButtons()
+    screenInput.value = ""
+    if (radio.value === "base-10") {
+      base10Buttons.forEach((button) => {
+        button.removeAttribute("disabled")
+      })
+    } else {
+      base10Buttons.forEach((button) => {
+        button.setAttribute("disabled", true)
+      })
+    }
   })
 })
 
@@ -56,7 +67,6 @@ const updateButtons = () => {
 const buttons = document.querySelectorAll(".calc-button")
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    console.log("here", screenInput.innerHTML, button.innerHTML)
     screenInput.value += button.innerHTML
   })
 })
