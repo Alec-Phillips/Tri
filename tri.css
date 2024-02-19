@@ -58,6 +58,8 @@ main {
   height: 40px;
   font-size: 18px;
   outline: none;
+  padding-inline: 10px;
+  text-align: right;
   caret-color: transparent;
 }
 #buttons-area {

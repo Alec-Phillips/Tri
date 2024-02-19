@@ -3,12 +3,12 @@ let mode = "base-3"
 const CONFIGS = {
   "base-3": {
     allowedKeys: [
-      42, 43, 45, 47, 48, 49, 50,
+      8, 42, 43, 45, 47, 48, 49, 50, 61
     ],
   },
   "base-10": {
     allowedKeys: [
-      42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
+      8, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 61
     ],
   }
 }
@@ -27,13 +27,7 @@ radios.forEach((radio) => {
 })
 
 const screenInput = document.querySelector("#screen-input")
-function checkInput(e) {
-  const allowedKeys = getAllowedKeys()
-  if (!allowedKeys.includes(e.keyCode)) {
-    e.preventDefault()
-  }
-}
-screenInput.addEventListener("keypress", checkInput)
+screenInput.addEventListener("keypress", (e) => { e.preventDefault() })
 
 const updateButtons = (newMode) => {
   if (newMode === "base-10") {
@@ -57,4 +51,12 @@ buttons.forEach((button) => {
 window.onload = () => {
   document.querySelector("#screen-input")
     .onpaste = e => e.preventDefault();
+  document.addEventListener("keypress", (e) => {
+    if (getAllowedKeys().includes(e.keyCode)) {
+      const targetButton = document.getElementById(e.keyCode)
+      targetButton.click()
+      targetButton.style.backgroundColor = "hsl(66, 42%, 75%)"
+      setTimeout(() => targetButton.style.backgroundColor = "#ffffff", 150)
+    }
+  })
 }
