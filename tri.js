@@ -18,10 +18,34 @@ const CONFIGS = {
 }
 
 const operators = {
-  "+": (operand1, operand2) => Number(operand1) + Number(operand2),
-  "-": (operand1, operand2) => Number(operand1) - Number(operand2),
-  "*": (operand1, operand2) => Number(operand1) * Number(operand2),
-  "/": (operand1, operand2) => Number(operand1) / Number(operand2),
+  "+": (operand1, operand2) => {
+    if (mode === "base-3") {
+      return (parseInt(operand1, 3) + parseInt(operand2, 3)).toString(3)
+    } else {
+      return operand1 + operand2
+    }
+  },
+  "-": (operand1, operand2) => {
+    if (mode === "base-3") {
+      return (parseInt(operand1, 3) - parseInt(operand2, 3)).toString(3)
+    } else {
+      return operand1 - operand2
+    }
+  },
+  "*": (operand1, operand2) => {
+    if (mode === "base-3") {
+      return (parseInt(operand1, 3) * parseInt(operand2, 3)).toString(3)
+    } else {
+      return operand1 * operand2
+    }
+  },
+  "/": (operand1, operand2) => {
+    if (mode === "base-3") {
+      return Math.floor((parseInt(operand1, 3) / parseInt(operand2, 3))).toString(3)
+    } else {
+      return operand1 / operand2
+    }
+  },
 }
 
 const getAllowedKeys = () => CONFIGS[mode].allowedKeys
@@ -94,7 +118,7 @@ equalsButton.addEventListener("click", () => {
 })
 
 const clearOperatorState = () => {
-  currentOperatorButton.removeAttribute?.("style")
+  currentOperatorButton?.removeAttribute?.("style")
   currentOperand = ""
   currentOperatorFn = null
   currentOperatorButton = null
