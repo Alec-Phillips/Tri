@@ -21,7 +21,7 @@ const radios = document.querySelectorAll("input[type=radio]")
 radios.forEach((radio) => {
   radio.addEventListener("click", () => {
     mode = radio.value
-    screenInput.value = ""
+    screenInput.value = "0"
     updateButtons(radio.value)
   })
 })
