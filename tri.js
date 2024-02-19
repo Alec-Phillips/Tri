@@ -56,7 +56,11 @@ const radios = document.querySelectorAll("input[type=radio]")
 radios.forEach((radio) => {
   radio.addEventListener("click", () => {
     mode = radio.value
-    screenInput.value = "0"
+    if (radio.value === "base-10") {
+      screenInput.value = parseInt(screenInput.value, 3).toString()
+    } else {
+      screenInput.value = parseInt(screenInput.value).toString(3)
+    }
     clearOperatorState()
     updateButtons(radio.value)
   })
