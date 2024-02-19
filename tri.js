@@ -85,7 +85,6 @@ const buttons = document.querySelectorAll(".inputtable")
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (currentOperatorFn && operatorJustActivated) {
-      currentOperatorButton.removeAttribute?.("style")
       screenInput.value = button.innerHTML
       operatorJustActivated = false
     } else {
