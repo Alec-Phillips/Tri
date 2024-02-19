@@ -44,7 +44,11 @@ const updateButtons = (newMode) => {
 const buttons = document.querySelectorAll(".calc-button")
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    screenInput.value += button.innerHTML
+    if (screenInput.value === "0") {
+      screenInput.value = button.innerHTML
+    } else {
+      screenInput.value += button.innerHTML
+    }
   })
 })
 
@@ -57,6 +61,15 @@ window.onload = () => {
       targetButton.click()
       targetButton.style.backgroundColor = "hsl(66, 42%, 75%)"
       setTimeout(() => targetButton.removeAttribute("style"), 150)
+    }
+  })
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Backspace") {
+      if (screenInput.value.length === 1) {
+        screenInput.value = "0"
+      } else {
+        screenInput.value = screenInput.value.substring(0, screenInput.value.length - 1)
+      }
     }
   })
 }

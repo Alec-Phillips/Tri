@@ -10,6 +10,10 @@
   - subtraction
   - multiplication
   - division
+  - AC
+    - clear the entire operation
+  - C
+    - clear the last inputted value but preserve the current operation and computed value
 
 - the input should be focused always
   - any key press should be caught and update the input field
