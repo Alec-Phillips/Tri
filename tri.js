@@ -33,6 +33,7 @@ radios.forEach((radio) => {
   radio.addEventListener("click", () => {
     mode = radio.value
     screenInput.value = "0"
+    clearOperatorState()
     updateButtons(radio.value)
   })
 })
@@ -83,11 +84,32 @@ operatorButtons.forEach((operatorButton) => {
 
 const equalsButton = document.getElementById("61")
 equalsButton.addEventListener("click", () => {
-  const operand2 = screenInput.value
-  const result = currentOperatorFn(currentOperand, operand2)
-  screenInput.value = result
-  currentOperand = result
-  currentOperatorButton?.removeAttribute?.("style")
+  if (currentOperatorFn) {
+    const operand2 = screenInput.value
+    const result = currentOperatorFn(currentOperand, operand2)
+    screenInput.value = result
+    currentOperand = result
+    currentOperatorButton?.removeAttribute?.("style")
+  }
+})
+
+const clearOperatorState = () => {
+  currentOperatorButton.removeAttribute?.("style")
+  currentOperand = ""
+  currentOperatorFn = null
+  currentOperatorButton = null
+  operatorJustActivated = false
+}
+
+const clearButton = document.getElementById("c-button")
+clearButton.addEventListener("click", () => {
+  clearOperatorState()
+})
+
+const clearAllButton = document.getElementById("ac-button")
+clearAllButton.addEventListener("click", () => {
+  clearOperatorState()
+  screenInput.value = "0"
 })
 
 window.onload = () => {
