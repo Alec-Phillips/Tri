@@ -35,7 +35,6 @@ function checkInput(e) {
 }
 screenInput.addEventListener("keypress", checkInput)
 
-
 const updateButtons = (newMode) => {
   if (newMode === "base-10") {
     base10Buttons.forEach((button) => {
@@ -54,7 +53,6 @@ buttons.forEach((button) => {
     screenInput.value += button.innerHTML
   })
 })
-
 
 window.onload = () => {
   document.querySelector("#screen-input")
