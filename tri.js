@@ -103,7 +103,7 @@ operatorButtons.forEach((operatorButton) => {
   operatorButton.addEventListener("click", () => {
     currentOperatorButton?.removeAttribute?.("style")
     currentOperatorButton = operatorButton
-    currentOperatorButton.style.backgroundColor = "hsl(66, 42%, 75%)"
+    currentOperatorButton.style.backgroundColor = "hsl(169, 38%, 73%)"
     currentOperand = screenInput.value
     currentOperatorFn = operators[operatorButton.innerHTML]
     operatorJustActivated = true
@@ -147,7 +147,7 @@ window.onload = () => {
     if (getAllowedKeys().includes(e.keyCode)) {
       const targetButton = document.getElementById(e.keyCode)
       targetButton.click()
-      targetButton.style.backgroundColor = "hsl(66, 42%, 75%)"
+      targetButton.style.backgroundColor = "hsl(169, 38%, 73%)"
       if (!targetButton.classList.contains("operator")) {
         setTimeout(() => targetButton.removeAttribute("style"), 150)
       }

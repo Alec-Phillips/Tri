@@ -52,7 +52,7 @@ main {
   padding: 10px;
 }
 #screen-input {
-  background-color: hsl(67, 91%, 89%);
+  background-color: hsl(168, 62%, 92%);
   width: 100%;
   height: 40px;
   font-size: 18px;
@@ -76,15 +76,15 @@ main {
   width: 40px;
   border-radius: 8px;
   background-color: #ffffff;
-  border: 1px solid hsl(67, 91%, 89%);
+  border: 1px solid hsl(168, 62%, 92%);
   outline: none;
 }
 .calc-button:hover {
   cursor: pointer;
-  background-color: hsl(67, 91%, 89%);
+  background-color: hsl(168, 62%, 92%);
 }
 .calc-button:active {
-  background-color: hsl(66, 42%, 75%);
+  background-color: hsl(169, 38%, 73%);
 }
 .calc-button:disabled {
   cursor: not-allowed;
