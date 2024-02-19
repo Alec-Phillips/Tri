@@ -160,6 +160,9 @@ window.onload = () => {
       } else {
         screenInput.value = screenInput.value.substring(0, screenInput.value.length - 1)
       }
+    } else if (e.code === "Enter") {
+      e.preventDefault()
+      equalsButton.click()
     }
   })
 }
