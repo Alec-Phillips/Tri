@@ -88,6 +88,6 @@ main {
 }
 .calc-button:disabled {
   cursor: not-allowed;
-  background-color: hsl(65, 17%, 73%);
-  border: 1px solid hsl(65, 17%, 73%);
+  background-color: hsl(68, 1%, 64%);
+  border: 1px solid hsl(68, 1%, 64%);
 }
