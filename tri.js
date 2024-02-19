@@ -148,7 +148,9 @@ window.onload = () => {
       const targetButton = document.getElementById(e.keyCode)
       targetButton.click()
       targetButton.style.backgroundColor = "hsl(66, 42%, 75%)"
-      setTimeout(() => targetButton.removeAttribute("style"), 150)
+      if (!targetButton.classList.contains("operator")) {
+        setTimeout(() => targetButton.removeAttribute("style"), 150)
+      }
     }
   })
   document.addEventListener("keydown", (e) => {
