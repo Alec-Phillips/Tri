@@ -56,7 +56,7 @@ window.onload = () => {
       const targetButton = document.getElementById(e.keyCode)
       targetButton.click()
       targetButton.style.backgroundColor = "hsl(66, 42%, 75%)"
-      setTimeout(() => targetButton.style.backgroundColor = "#ffffff", 150)
+      setTimeout(() => targetButton.removeAttribute("style"), 150)
     }
   })
 }
