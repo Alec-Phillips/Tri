@@ -2,10 +2,13 @@ html,
 body {
   margin: 0;
   width: 100%;
-  height: auto;
   font-family: Andale Mono, monospace;
 }
+html {
+  height: 100%;
+}
 body {
+  height: auto;
   --padding: 20px;
   padding: var(--padding) 0;
 }

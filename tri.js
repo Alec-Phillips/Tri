@@ -144,17 +144,21 @@ const acButtonKeys = {
   KeyC: false,
 }
 
+const simulateClick = (element, removeBackground = true) => {
+  element.click()
+  element.style.backgroundColor = "hsl(169, 38%, 73%)"
+  if (removeBackground) {
+    setTimeout(() => element.removeAttribute("style"), 150)
+  }
+}
+
 window.onload = () => {
   document.querySelector("#screen-input")
     .onpaste = e => e.preventDefault();
   document.addEventListener("keypress", (e) => {
     if (getAllowedKeys().includes(e.keyCode)) {
       const targetButton = document.getElementById(e.keyCode)
-      targetButton.click()
-      targetButton.style.backgroundColor = "hsl(169, 38%, 73%)"
-      if (!targetButton.classList.contains("operator")) {
-        setTimeout(() => targetButton.removeAttribute("style"), 150)
-      }
+      simulateClick(targetButton, !targetButton.classList.contains("operator"))
     }
   })
   document.addEventListener("keydown", (e) => {
@@ -170,13 +174,9 @@ window.onload = () => {
     } else if (Object.hasOwn(acButtonKeys, e.code)) {
       acButtonKeys[e.code] = true
       if (acButtonKeys.KeyA && acButtonKeys.KeyC) {
-        clearAllButton.click()
-        clearAllButton.style.backgroundColor = "hsl(169, 38%, 73%)"
-        setTimeout(() => clearAllButton.removeAttribute("style"), 150)
+        simulateClick(clearAllButton)
       } else if (acButtonKeys.KeyC) {
-        clearButton.click()
-        clearButton.style.backgroundColor = "hsl(169, 38%, 73%)"
-        setTimeout(() => clearButton.removeAttribute("style"), 150)
+        simulateClick(clearButton)
       }
     }
   })
