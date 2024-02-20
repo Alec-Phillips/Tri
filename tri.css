@@ -82,6 +82,7 @@ main {
   background-color: #ffffff;
   border: 1px solid hsl(168, 62%, 92%);
   outline: none;
+  color: #111111;
 }
 .calc-button:hover {
   cursor: pointer;
