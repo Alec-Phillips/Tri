@@ -60,6 +60,7 @@ main {
   padding-inline: 10px;
   text-align: right;
   caret-color: transparent;
+  border-radius: 5px;
 }
 #buttons-area {
   grid-column: 2;

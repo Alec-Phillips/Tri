@@ -139,6 +139,11 @@ clearAllButton.addEventListener("click", () => {
   screenInput.value = "0"
 })
 
+const acButtonKeys = {
+  KeyA: false,
+  KeyC: false,
+}
+
 window.onload = () => {
   document.querySelector("#screen-input")
     .onpaste = e => e.preventDefault();
@@ -162,6 +167,22 @@ window.onload = () => {
     } else if (e.code === "Enter") {
       e.preventDefault()
       equalsButton.click()
+    } else if (Object.hasOwn(acButtonKeys, e.code)) {
+      acButtonKeys[e.code] = true
+      if (acButtonKeys.KeyA && acButtonKeys.KeyC) {
+        clearAllButton.click()
+        clearAllButton.style.backgroundColor = "hsl(169, 38%, 73%)"
+        setTimeout(() => clearAllButton.removeAttribute("style"), 150)
+      } else if (acButtonKeys.KeyC) {
+        clearButton.click()
+        clearButton.style.backgroundColor = "hsl(169, 38%, 73%)"
+        setTimeout(() => clearButton.removeAttribute("style"), 150)
+      }
+    }
+  })
+  document.addEventListener("keyup", (e) => {
+    if (Object.hasOwn(acButtonKeys, e.code)) {
+      acButtonKeys[e.code] = false
     }
   })
 }
