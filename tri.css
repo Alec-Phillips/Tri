@@ -84,9 +84,11 @@ main {
   outline: none;
   color: #111111;
 }
-.calc-button:hover {
-  cursor: pointer;
-  background-color: hsl(168, 62%, 92%);
+@media (hover: hover) {
+  .calc-button:hover {
+    cursor: pointer;
+    background-color: hsl(168, 62%, 92%);
+  }
 }
 .calc-button:active {
   background-color: hsl(169, 38%, 73%);
