@@ -83,7 +83,8 @@ const updateButtons = (newMode) => {
 
 const buttons = document.querySelectorAll(".inputtable")
 buttons.forEach((button) => {
-  button.addEventListener("click", () => {
+  const handleInteraction = (e) => {
+    e.preventDefault()
     if (currentOperatorFn && operatorJustActivated) {
       screenInput.value = button.innerHTML
       operatorJustActivated = false
@@ -94,7 +95,9 @@ buttons.forEach((button) => {
         screenInput.value += button.innerHTML
       }
     }
-  })
+  }
+  button.addEventListener("click", handleInteraction)
+  button.addEventListener("touchStart", handleInteraction)
 })
 
 const operatorButtons = document.querySelectorAll(".operator")
