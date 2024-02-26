@@ -3,7 +3,7 @@
     "@tsconfig/recommended": "1.0.3"
   },
   "scripts": {
-    "build-dev": "tsc && node dev-server.js"
+    "build-dev": "open 'http://localhost:3033/' && tsc && node dev-server.js"
   },
   "dependencies": {
     "express": "^4.18.2"
