@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@tsconfig/recommended": "1.0.3"
+  },
+  "scripts": {
+    "build-dev": "tsc && node dev-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
