@@ -6,6 +6,6 @@ yarn build
 
 cp src/index.html src/*.js  src/*.css .
 
-git push --set-upstream origin deploy --force
+git add . && git commit -m "deploy"
 
-fi
+git push --set-upstream origin deploy --force
