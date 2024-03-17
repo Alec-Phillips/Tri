@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tri</title>
+  <link rel="stylesheet" type="text/css" href="tri.css" />
+</head>
+
+<body>
+  <div id="main-content">
+    <div id="header">
+      <fieldset>
+        <div>
+          <input type="radio" id="tri" name="base" value="base-3" checked />
+          <label for="tri">Base 3</label>
+        </div>
+        <div>
+          <input type="radio" id="base-10" name="base" value="base-10" />
+          <label for="base-10">Base 10</label>
+        </div>
+      </fieldset>
+    </div>
+    <main>
+      <div id="calculator-body">
+        <div id="calculator-screen">
+          <input id="screen-input" type="text" inputmode="numeric" value="0">
+        </div>
+        <div id="buttons-area">
+          <div class="calc-row">
+            <button class="calc-button inputtable" id="48">0</button>
+            <button class="calc-button inputtable" id="49">1</button>
+            <button class="calc-button inputtable" id="50">2</button>
+          </div>
+          <div class="calc-row">
+            <button class="calc-button base-10-button inputtable" disabled id="51">3</button>
+            <button class="calc-button base-10-button inputtable" disabled id="52">4</button>
+            <button class="calc-button base-10-button inputtable" disabled id="53">5</button>
+          </div>
+          <div class="calc-row">
+            <button class="calc-button base-10-button inputtable" disabled id="54">6</button>
+            <button class="calc-button base-10-button inputtable" disabled id="55">7</button>
+            <button class="calc-button base-10-button inputtable" disabled id="56">8</button>
+          </div>
+          <div class="calc-row">
+            <button class="calc-button base-10-button inputtable" disabled id="57">9</button>
+            <button class="calc-button operator" id="43">+</button>
+            <button class="calc-button operator" id="45">-</button>
+          </div>
+          <div class="calc-row">
+            <button class="calc-button operator" id="42">*</button>
+            <button class="calc-button operator" id="47">/</button>
+            <button class="calc-button" id="61">=</button>
+          </div>
+          <div class="calc-row">
+            <button class="calc-button" id="ac-button" title="{KeyC}">AC</button>
+            <button class="calc-button" id="c-button" title="{KeyA+KeyC}">C</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./tri.js"></script>
+</body>
+
+</html>
